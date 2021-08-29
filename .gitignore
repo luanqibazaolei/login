@@ -1,0 +1,3 @@
+# Project exclude paths
+/all-login/common/target/
+/all-login/sp-login/target/

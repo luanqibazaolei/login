@@ -1,0 +1,7 @@
+spring:
+  application :
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://120.24.191.224:3306/oss_test
+      username: root
+      password: shen0602
