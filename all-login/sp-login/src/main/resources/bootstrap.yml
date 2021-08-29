@@ -1,6 +1,12 @@
 server:
   port: 8070
 spring:
+  datasource:
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.24.191.224:3306/oss_test
+    username: root
+    password: shen0602
   application:
     name: login
   profiles:
@@ -17,3 +23,5 @@ spring:
         namespace: e7dc49d9-7a14-4f2d-af20-19196000006c
         file-extension: yaml
         group: DEFAULT_GROUP
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml

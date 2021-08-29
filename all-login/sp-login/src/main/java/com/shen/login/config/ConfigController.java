@@ -1,4 +1,4 @@
-package com.shen.login.controller;
+package com.shen.login.config;
 
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;

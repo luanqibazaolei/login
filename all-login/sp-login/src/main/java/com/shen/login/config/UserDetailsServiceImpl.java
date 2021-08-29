@@ -1,4 +1,4 @@
-package com.shen.login.controller;
+package com.shen.login.config;
 
 import com.shen.login.entity.TbPermission;
 import com.shen.login.entity.TbUser;
