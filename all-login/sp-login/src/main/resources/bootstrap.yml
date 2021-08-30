@@ -16,7 +16,7 @@ spring:
     nacos:
       discovery:
         server-addr: http://120.24.191.224:8848
-        namespace: e7dc49d9-7a14-4f2d-af20-19196000006c\
+        namespace: e7dc49d9-7a14-4f2d-af20-19196000006c
       #        如果配置文件出错请检查 config中是否有错误！ （被中文冒号耽误了1个小时）
       config:
         server-addr: http://120.24.191.224:8848
@@ -25,3 +25,5 @@ spring:
         group: DEFAULT_GROUP
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

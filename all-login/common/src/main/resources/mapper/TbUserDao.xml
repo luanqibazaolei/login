@@ -75,29 +75,26 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into oss_test.tb_user(username, password, gender, email, create_time, update_time, removed)
-        values (#{username}, #{password}, #{gender}, #{email}, #{createTime}, #{updateTime}, #{removed})
+        insert into oss_test.tb_user(username, password, gender, email)
+        values (#{username}, #{password}, #{gender}, #{email})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into oss_test.tb_user(username, password, gender, email, create_time, update_time, removed)
+        insert into oss_test.tb_user(username, password, gender, email)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.username}, #{entity.password}, #{entity.gender}, #{entity.email}, #{entity.createTime},
-            #{entity.updateTime}, #{entity.removed})
+            (#{entity.username}, #{entity.password}, #{entity.gender}, #{entity.email})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into oss_test.tb_user(username, password, gender, email, create_time, update_time, removed)
+        insert into oss_test.tb_user(username, password, gender, email, removed)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.username}, #{entity.password}, #{entity.gender}, #{entity.email}, #{entity.createTime},
-            #{entity.updateTime}, #{entity.removed})
+            (#{entity.username}, #{entity.password}, #{entity.gender}, #{entity.email} , #{entity.removed})
         </foreach>
         on duplicate key update
-        username = values(username) , password = values(password) , gender = values(gender) , email = values(email) ,
-        create_time = values(create_time) , update_time = values(update_time) , removed = values(removed)
+        username = values(username) , password = values(password) , gender = values(gender) , email = values(email)
     </insert>
 
     <!--通过主键修改数据-->
@@ -115,12 +112,6 @@
             </if>
             <if test="email != null and email != ''">
                 email = #{email},
-            </if>
-            <if test="createTime != null">
-                create_time = #{createTime},
-            </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime},
             </if>
             <if test="removed != null">
                 removed = #{removed},

@@ -76,7 +76,7 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into oss_test.tb_permission(parent_id, name, ename, url, description, create_time, update_time)
-        values (#{parentId}, #{name}, #{ename}, #{url}, #{description}, #{createTime}, #{updateTime})
+        values (#{parentId}, #{name}, #{ename}, #{url}, #{description})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
